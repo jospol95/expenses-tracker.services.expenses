@@ -1,6 +1,8 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace Expenses.Domain
 {
-    public class ExpensesDbContext
+    public class ExpensesDbContext : DbContext
     {
         
     }

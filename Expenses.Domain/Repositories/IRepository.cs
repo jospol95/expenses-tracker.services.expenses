@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Expenses.Domain.Repositories
 {
     public interface IRepository<TEntity> where TEntity: class
     {
-        void Insert(object id);
-        void Update(object id);
+        Task InsertAsync(TEntity entity);
+        void Update(TEntity entity);
         void Delete(TEntity entityToDelete);
         void DeleteById(object id);
-        TEntity GetById(TEntity entity);
+        Task<TEntity> GetById(object id);
         //todo add filters
         IEnumerable<TEntity> Get();
         // IEnumerable<TEntity> GetWithPagination();
