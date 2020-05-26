@@ -14,7 +14,7 @@
         "outputPath": "/Users/josep/Documents/Projects/expense-tracker/services/expenses/Expenses.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/josep/.nuget/NuGet/NuGet.Config"
+          "/Users/josep/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"

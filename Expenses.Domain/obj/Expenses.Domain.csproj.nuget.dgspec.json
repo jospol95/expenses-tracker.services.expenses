@@ -14,7 +14,7 @@
         "outputPath": "/Users/josep/Documents/Projects/expense-tracker/services/expenses/Expenses.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/josep/.nuget/NuGet/NuGet.Config"
+          "/Users/josep/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
