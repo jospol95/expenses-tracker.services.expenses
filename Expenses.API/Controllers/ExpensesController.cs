@@ -1,7 +1,9 @@
 using System.Runtime.InteropServices.ComTypes;
 using System.Threading.Tasks;
 using Expenses.API.Application.Commands;
+using Expenses.API.Application.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Expenses.API.Controllers
@@ -17,18 +19,49 @@ namespace Expenses.API.Controllers
             _mediator = mediator;
         }
         
-        //todo should be getId
-        [HttpGet("get")]
-        public async Task<IActionResult> Get(int id)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Get(string id)
         {
-            return Ok(null);
+            var expense = await _mediator.Send(new GetExpenseByIdQuery(id));
+            if (expense == null) return NotFound();
+            return Ok(expense);
         }
+        
 
-        [HttpPost("create")]
-        public async Task<IActionResult> Create(CreateExpenseCommand createExpenseCommand)
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> PatchExpense(string id, UpdateExpenseCommand expense)
         {
-            var id = await _mediator.Send(createExpenseCommand);
-            return Ok(id);
+            if (id != expense.Id)
+            {
+                return BadRequest();
+            }
+
+            await _mediator.Send(expense);
+            return NoContent();
+        }
+        
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteExpense(string id)
+        {
+            var command = new DeleteExpenseCommand(id);
+            var foundAndDeleted = await _mediator.Send(command);
+
+            if (!foundAndDeleted) return NotFound();
+            return Ok();
+        }
+        
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [HttpPost("create")]
+        public async Task<IActionResult> Create(CreateExpenseCommand expense)
+        {
+            var id = await _mediator.Send(expense);
+            return Ok( new {id} );
         }
     }
 }

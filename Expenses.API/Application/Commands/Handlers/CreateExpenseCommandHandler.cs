@@ -1,10 +1,11 @@
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Expenses.Domain.Models;
 using Expenses.Domain.Repositories;
 using MediatR;
 
-namespace Expenses.API.Application.Commands
+namespace Expenses.API.Application.Commands.Handlers
 {
     public class CreateExpenseCommandHandler : IRequestHandler<CreateExpenseCommand, string>
     {
@@ -16,10 +17,20 @@ namespace Expenses.API.Application.Commands
         
         public async Task<string> Handle(CreateExpenseCommand request, CancellationToken cancellationToken)
         {
-            // Id created by class itself.
-            var expense = new Expense(request.Title, request.FullDate, request.CategoryId, request.UserId);
+            var expense = new Expense(
+                Guid.NewGuid().ToString(), 
+                request.Title, 
+                request.Amount,
+                request.Date, 
+                request.UserId,
+                request.Description,
+                request.CategoryId,
+                request.AccountId
+                );
+            
             await _unitOfWork.Expenses.InsertAsync(expense);
             await _unitOfWork.CommitAsync();
+            
             return expense.Id;
         }
     }

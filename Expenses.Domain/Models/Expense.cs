@@ -14,30 +14,43 @@ namespace Expenses.Domain.Models
         [Column("title")]
         public string Title{get;set;}
         
-        [Column("full_date")]
-        public DateTime FullDate{get;set;}
+        [Column("amount", TypeName = "decimal(19,4)")]
+        public decimal Amount { get; set; }
         
-        [Column("category_id")]
-        public int CategoryId{get;set;}
+        [Column("date")]
+        public DateTime Date{get;set;}
+        
+        [Column("description")]
+        public string Description { get; set; }
         
         [Column("user_id")]
         public string UserId{get;set;}
         
-        [Column("is_paid")]
-        public Boolean Paid { get; set; }
+        [Column("category_id")]
+        public int? CategoryId {get; set;}
+        
+        [Column("account_id")]
+        public int? AccountId {get; set;}
+        
 
-        public Expense (string title, DateTime fullDate, int categoryId, string userId)
+        public Expense (string id, string title, decimal amount, 
+            DateTime date, string userId, string description,
+            int? categoryId, int? accountId)
         {
-            Id = Guid.NewGuid().ToString();
-            FullDate = fullDate;
-            CategoryId = categoryId;
+            Id = id;
+            Title = title;
+            Amount = amount;
+            Date = date;
             UserId = userId;
+            Description = description;
+            CategoryId = categoryId;
+            AccountId = accountId;
         }
-
-        public void SetPaidStatus(Boolean paid)
-        {
-            Paid = paid;
-        }
+        //
+        // public void SetPaidStatus(Boolean paid)
+        // {
+        //     Paid = paid;
+        // }
 
         // public string ExpenseDetailId{get;set;}
     }
