@@ -18,9 +18,9 @@ namespace Expenses.API.Application.Commands.Handlers
         public async Task<Unit> Handle(UpdateCategoryCommand request, CancellationToken cancellationToken)
         {
             var dbCategory = await _unitOfWork.Categories.GetById(request.Id);
-
-            dbCategory.Description = request.Description;
-            dbCategory.Name = request.Name;
+            dbCategory.Update(request.Name, request.Description);
+            // dbCategory.Description = request.Description;
+            // dbCategory.Name = request.Name;
 
             await _unitOfWork.CommitAsync();
             return Unit.Value;

@@ -19,8 +19,9 @@ namespace Expenses.API.Application.Commands.Handlers
             var dbAccount = await _unitOfWork.Accounts.GetById(account.Id);
             if (dbAccount == null) return false;
 
-            dbAccount.Description = account.Description;
-            dbAccount.Name = account.Name;
+            dbAccount.Update(account.Description, account.Name);
+            // dbAccount.Description = account.Description;
+            // dbAccount.Name = account.Name;
             await _unitOfWork.CommitAsync();
             
             return true;

@@ -16,12 +16,14 @@ namespace Expenses.API.Application.Commands.Handlers
         }
         public async Task<int> Handle(CreateAccountCommand request, CancellationToken cancellationToken)
         {
-            var account = new Account()
-            {
-                Description = request.Description != null ? string.Empty: request.Description,
-                Name = request.Name,
-                UserId = request.UserId
-            };
+
+            var account = new Account();
+            account.Create(request.Name, request.Description?? string.Empty, request.UserId);
+            // {
+            //     Description = request.Description != null ? string.Empty: request.Description,
+            //     Name = request.Name,
+            //     UserId = request.UserId
+            // };
 
             await _unitOfWork.Accounts.InsertAsync(account);
             await _unitOfWork.CommitAsync();
