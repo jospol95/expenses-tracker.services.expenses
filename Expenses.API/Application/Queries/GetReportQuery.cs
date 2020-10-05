@@ -9,9 +9,8 @@ namespace Expenses.API.Application.Queries
     {
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        
         public List<int> SelectedCategories { get; set; }
-        
         public List<int> SelectedAccounts { get; set; }
+        public bool IncludeIncomes { get; set; }
     }
 }

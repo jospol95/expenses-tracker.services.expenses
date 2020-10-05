@@ -3,7 +3,7 @@ using MediatR;
 
 namespace Expenses.API.Application.Commands
 {
-    public class CreateExpenseCommand: IRequest<string>
+    public class CreateExpenseCommand: IRequest<Unit>
     {
         public string Title{get;set;}
         public decimal Amount { get; set; }
@@ -12,6 +12,8 @@ namespace Expenses.API.Application.Commands
         public string Description { get; set; }
         public int? CategoryId { get; set; }
         public int? AccountId { get; set; }
+        
+        public bool IsConcurrent { get; set; }
         
     }
 }
