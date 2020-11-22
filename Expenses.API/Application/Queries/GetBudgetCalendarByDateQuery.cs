@@ -10,9 +10,9 @@ namespace Expenses.API.Application.Queries
     {
         public int Month { get; set; }
         public int Year { get; set; }
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
-        public GetBudgetCalendarByDateQuery(int month, int year, int userId)
+        public GetBudgetCalendarByDateQuery(int month, int year, string userId)
         {
             Month = month;
             Year = year;

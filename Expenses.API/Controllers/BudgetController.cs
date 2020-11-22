@@ -19,7 +19,7 @@ namespace Expenses.API.Controllers
         
         // GET
         [HttpGet("get")]
-        public async Task<IActionResult> Get(int month, int year, int userId)
+        public async Task<IActionResult> Get(int month, int year, string userId)
         {
             var request = new GetBudgetCalendarByDateQuery(month,year,userId);
             var budgetCalendarList = await _mediator.Send(request);

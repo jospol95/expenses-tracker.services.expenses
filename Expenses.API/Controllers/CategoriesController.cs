@@ -22,7 +22,7 @@ namespace Expenses.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("{userId}")]
-        public async Task<IActionResult> GetCategoriesForUser(int userId)
+        public async Task<IActionResult> GetCategoriesForUser(string userId)
         {
             var query = new GetCategoriesQuery(userId);
             var categoriesList = await _mediator.Send(query);

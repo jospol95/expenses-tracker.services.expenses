@@ -33,6 +33,13 @@ namespace Expenses.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.WithOrigins("http://localhost:4200")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+            }));
             
             services.AddDbContext<ExpensesDbContext>(option =>
             {
@@ -80,6 +87,9 @@ namespace Expenses.API
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            
+            app.UseCors("MyPolicy");
+
             if (env.IsDevelopment())
             {
                 app.UseSwagger();
@@ -91,7 +101,6 @@ namespace Expenses.API
 
             app.UseRouting();
             
-            app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
             app.UseAuthorization();
 

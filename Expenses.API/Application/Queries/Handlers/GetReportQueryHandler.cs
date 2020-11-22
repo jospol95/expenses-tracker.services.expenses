@@ -28,14 +28,16 @@ namespace Expenses.API.Application.Queries.Handlers
             var expensesList = _dbContext.Expenses
                 .FromSqlRaw("SELECT * " +
                             "FROM dbo.expense E where " +
-                            "E.date BETWEEN  {0} AND {1} ",
-                    request.StartDate.Date, request.EndDate.Date);
+                            "E.date BETWEEN  {0} AND {1} " +
+                            "AND E.user_id = {2} ",
+                    request.StartDate.Date, request.EndDate.Date, request.UserId);
 
             var incomesList = _dbContext.Incomes
                 .FromSqlRaw("SELECT * " +
                             "FROM dbo.income I where " +
-                            "I.date BETWEEN  {0} AND {1} ",
-                    request.StartDate.Date, request.EndDate.Date);
+                            "I.date BETWEEN  {0} AND {1} "+
+                            "AND I.user_id = {2} ",
+                    request.StartDate.Date, request.EndDate.Date, request.UserId);
 
             var filteredIncomesList = incomesList
                 .Where(income => (income.AccountId != null && request.SelectedAccounts.Contains(income.AccountId.Value)))
