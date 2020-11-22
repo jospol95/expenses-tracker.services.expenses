@@ -6,9 +6,9 @@ namespace Expenses.API.Application.Queries
 {
     public class GetCategoriesQuery : IRequest<IEnumerable<Category>>
     {
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
-        public GetCategoriesQuery(int userId)
+        public GetCategoriesQuery(string userId)
         {
             UserId = userId;
         }

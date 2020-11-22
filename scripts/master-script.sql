@@ -1,0 +1,1 @@
+-- Checks for tables existence, instead of running independently

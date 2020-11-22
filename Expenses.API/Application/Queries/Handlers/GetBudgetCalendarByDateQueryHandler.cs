@@ -28,20 +28,21 @@ namespace Expenses.API.Application.Queries.Handlers
         {
             if (isDateProvidedValid(request.Month)) return null;
             request.Month++;
-            //todo Add UserId to param
-            // getting the list of expenses and incomes for that month in that year
+            // TODO getting the list of expenses and incomes for that month in that year
             var expensesListForMonth = _dbContext.Expenses
                 .FromSqlRaw("SELECT * " +
                             "FROM dbo.expense EX where " +
-                            "MONTH(EX.DATE) = {0} AND YEAR(EX.DATE) = {1}",
-                    request.Month, request.Year
+                            "MONTH(EX.DATE) = {0} AND YEAR(EX.DATE) = {1} " + 
+                            "AND EX.user_id = {2}",
+                    request.Month, request.Year, request.UserId
                 );
             
             var incomeListForMonth = _dbContext.Incomes
                 .FromSqlRaw("SELECT * " +
                             "FROM dbo.income INC where " +
-                            "MONTH(INC.DATE) = {0} AND YEAR(INC.DATE) = {1}",
-                    request.Month, request.Year
+                            "MONTH(INC.DATE) = {0} AND YEAR(INC.DATE) = {1} " +
+                            "AND INC.user_id = {2}",
+                    request.Month, request.Year, request.UserId
                 );
 
             var budgetForMonth = GetBudgetDateArray(

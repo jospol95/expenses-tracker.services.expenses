@@ -46,6 +46,12 @@ namespace Expenses.Domain.Models
             CategoryId = categoryId;
             AccountId = accountId;
         }
+
+        public void DeleteCategory()
+        {
+            AccountId = null;
+        }
+        
         //
         // public void SetPaidStatus(Boolean paid)
         // {

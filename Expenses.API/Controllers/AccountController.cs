@@ -31,7 +31,7 @@ namespace Expenses.API.Controllers
 
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [HttpPost]
+        [HttpPost("create")]
         public async Task<IActionResult> Create(CreateAccountCommand account)
         {
             if (!ModelState.IsValid)

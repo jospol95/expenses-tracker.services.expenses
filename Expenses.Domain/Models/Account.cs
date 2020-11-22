@@ -10,12 +10,12 @@ namespace Expenses.Domain.Models
         [Key]
         public int Id { get; set; }
         [Column("name")]
-        private string Name { get; set; }
+        public string Name { get; set; }
         [Column("description")]
-        private string Description { get; set; }
+        public string Description { get; set; }
         [Column("user_id")]
-        private string UserId { get; set; }
-
+        public string UserId { get; set; }
+        
         public void Update(string name, string description)
         {
             Name = name;

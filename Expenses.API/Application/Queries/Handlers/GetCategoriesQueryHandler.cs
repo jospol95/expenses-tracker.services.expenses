@@ -22,7 +22,7 @@ namespace Expenses.API.Application.Queries.Handlers
         public async Task<IEnumerable<Category>> Handle(GetCategoriesQuery request, CancellationToken cancellationToken)
         {
             var categoriesForUser = _dbContext.Categories
-                .FromSqlRaw("SELECT * FROM dbo.category where user_id = {0}", request.UserId);
+                .FromSqlRaw("SELECT * FROM dbo.category where user_id = {0} ORDER BY id DESC", request.UserId);
 
             return categoriesForUser;
         }
