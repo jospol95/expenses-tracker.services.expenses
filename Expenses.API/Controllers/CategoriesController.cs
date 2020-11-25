@@ -22,7 +22,7 @@ namespace Expenses.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("{userId}")]
-        public async Task<IActionResult> GetCategoriesForUser(int userId)
+        public async Task<IActionResult> GetCategoriesForUser(string userId)
         {
             var query = new GetCategoriesQuery(userId);
             var categoriesList = await _mediator.Send(query);
@@ -32,7 +32,7 @@ namespace Expenses.API.Controllers
 
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [HttpPost]
+        [HttpPost("create")]
         public async Task<IActionResult> Create(CreateCategoryCommand category)
         {
             if (!ModelState.IsValid)
@@ -59,6 +59,7 @@ namespace Expenses.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpDelete("{id}")]
+        // Check the UserId
         public async Task<IActionResult> DeleteCategory(int id)
         {
             var deleteCommand = new DeleteCategoryCommand(id);

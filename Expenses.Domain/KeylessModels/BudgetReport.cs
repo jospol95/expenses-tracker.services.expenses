@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Expenses.Domain.KeylessModels
 {
-    [Keyless]
+    // [Keyless]
     public class BudgetReport
     {
         [Column("id")]

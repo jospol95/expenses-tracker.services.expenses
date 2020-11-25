@@ -60,14 +60,12 @@ namespace Expenses.API.Controllers
         [HttpPost("create")]
         public async Task<IActionResult> Create(CreateIncomeCommand income)
         {
-            if (ModelState.IsValid)
-            {
-                var incomeId = await _mediator.Send(income);
-                if (incomeId == null) return BadRequest("An error occured");
+            if (!ModelState.IsValid) return BadRequest("Error");
+            
+            var incomeId = await _mediator.Send(income);
+            // if (incomeId == null) return BadRequest("An error occured");
 
-                return Ok(new {id = incomeId });
-            }
-            else return BadRequest("Error");
+            return Ok(new {id = incomeId });
         }
     }
 }

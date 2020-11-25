@@ -2,7 +2,7 @@ using MediatR;
 
 namespace Expenses.API.Application.Commands
 {
-    public class DeleteCategoryCommand : IRequest<bool>
+    public class DeleteCategoryCommand  : BudgetRequest,  IRequest<bool>
     {
         public int Id { get; set; }
 

@@ -17,7 +17,7 @@ namespace Expenses.API.Application.Commands.Handlers
         public async Task<int> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
         {
             var category = new Category();
-            category.Create(request.Name, request.Description ?? string.Empty, request.UserId);
+            category.Create(request.Name, request.Description ?? string.Empty, request.UserId, request.BudgetAssigned);
             // {
             //     Description = request.Description != null ? string.Empty: request.Description,
             //     Name = request.Name,
