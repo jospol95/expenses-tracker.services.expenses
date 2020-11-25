@@ -42,15 +42,6 @@ namespace Expenses.API
                     .AllowAnyHeader();
             }));
             
-            services.AddHttpsRedirection(options =>
-            {
-                options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
-                if (Environment.GetEnvironmentVariable("PORT") != null)
-                {
-                    options.HttpsPort = Int32.Parse(Environment.GetEnvironmentVariable("PORT"));
-                }
-            });
-            
             services.AddDbContext<ExpensesDbContext>(option =>
             {
                 option.UseSqlServer(Configuration.GetConnectionString("budget_dev"),
@@ -107,7 +98,7 @@ namespace Expenses.API
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseHttpsRedirection();
+            // app.UseHttpsRedirection();
 
             app.UseRouting();
             
