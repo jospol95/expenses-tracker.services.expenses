@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/josep/Documents/Projects/expense-tracker/services/expenses/Expenses.Domain/Expenses.Domain.csproj": {}
+    "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj": {}
   },
   "projects": {
-    "/Users/josep/Documents/Projects/expense-tracker/services/expenses/Expenses.Domain/Expenses.Domain.csproj": {
+    "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/josep/Documents/Projects/expense-tracker/services/expenses/Expenses.Domain/Expenses.Domain.csproj",
+        "projectUniqueName": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj",
         "projectName": "Expenses.Domain",
-        "projectPath": "/Users/josep/Documents/Projects/expense-tracker/services/expenses/Expenses.Domain/Expenses.Domain.csproj",
+        "projectPath": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj",
         "packagesPath": "/Users/josep/.nuget/packages/",
-        "outputPath": "/Users/josep/Documents/Projects/expense-tracker/services/expenses/Expenses.Domain/obj/",
+        "outputPath": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/josep/.config/NuGet/NuGet.Config"

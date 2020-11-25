@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="BudgetMS.sln" t="IncludeFlat" />
+      <e p="Expenses.API" t="IncludeRecursive">
+        <e p="Application" t="Include">
+          <e p="BudgetRequest.cs" t="Include" />
+          <e p="Commands" t="Include">
+            <e p="CreateAccountCommand.cs" t="Include" />
+            <e p="CreateCategoryCommand.cs" t="Include" />
+            <e p="CreateExpenseCommand.cs" t="Include" />
+            <e p="CreateIncomeCommand.cs" t="Include" />
+            <e p="DeleteAccountCommand.cs" t="Include" />
+            <e p="DeleteCategoryCommand.cs" t="Include" />
+            <e p="DeleteExpenseCommand.cs" t="Include" />
+            <e p="DeleteIncomeCommand.cs" t="Include" />
+            <e p="Handlers" t="Include">
+              <e p="CreateAccountCommandHandler.cs" t="Include" />
+              <e p="CreateCategoryCommandHandler.cs" t="Include" />
+              <e p="CreateExpenseCommandHandler.cs" t="Include" />
+              <e p="CreateIncomeCommandHandler.cs" t="Include" />
+              <e p="DeleteAccountCommandHandler.cs" t="Include" />
+              <e p="DeleteCategoryCommandHandler.cs" t="Include" />
+              <e p="DeleteExpenseCommandHandler.cs" t="Include" />
+              <e p="DeleteIncomeCommandHandler.cs" t="Include" />
+              <e p="UpdateAccountCommandHandler.cs" t="Include" />
+              <e p="UpdateCategoryCommandHandler.cs" t="Include" />
+              <e p="UpdateExpenseCommandHandler.cs" t="Include" />
+              <e p="UpdateIncomeCommandHandler.cs" t="Include" />
+            </e>
+            <e p="UpdateAccountCommand.cs" t="Include" />
+            <e p="UpdateCategoryCommand.cs" t="Include" />
+            <e p="UpdateExpenseCommand.cs" t="Include" />
+            <e p="UpdateIncomeCommand.cs" t="Include" />
+          </e>
+          <e p="Queries" t="Include">
+            <e p="GetAccountsQuery.cs" t="Include" />
+            <e p="GetBudgetCalendarByDateQuery.cs" t="Include" />
+            <e p="GetBudgetReportQuery.cs" t="Include" />
+            <e p="GetCategoriesQuery.cs" t="Include" />
+            <e p="GetExpenseByIdQuery.cs" t="Include" />
+            <e p="GetIncomeByIdQuery.cs" t="Include" />
+            <e p="GetReportQuery.cs" t="Include" />
+            <e p="Handlers" t="Include">
+              <e p="GetAccountsQueryHandler.cs" t="Include" />
+              <e p="GetBudgetCalendarByDateQueryHandler.cs" t="Include" />
+              <e p="GetBudgetReportQueryHandler.cs" t="Include" />
+              <e p="GetCategoriesQueryHandler.cs" t="Include" />
+              <e p="GetExpenseByIdQueryHandler.cs" t="Include" />
+              <e p="GetIncomeByIdQueryHandler.cs" t="Include" />
+              <e p="GetReportQueryHandler.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="appsettings.Development.json" t="Include" />
+        <e p="appsettings.json" t="Include" />
+        <e p="appsettings.Staging.json" t="Include" />
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Controllers" t="Include">
+          <e p="AccountController.cs" t="Include" />
+          <e p="BudgetController.cs" t="Include" />
+          <e p="CategoriesController.cs" t="Include" />
+          <e p="ExpensesController.cs" t="Include" />
+          <e p="IncomeController.cs" t="Include" />
+          <e p="ReportsController.cs" t="Include" />
+        </e>
+        <e p="Dockerfile" t="Include" />
+        <e p="Expenses.API.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="Expenses.API.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Startup.cs" t="Include" />
+      </e>
+      <e p="Expenses.Domain" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Expenses.Domain.csproj" t="IncludeRecursive" />
+        <e p="ExpensesDbContext.cs" t="Include" />
+        <e p="KeylessModels" t="Include">
+          <e p="BudgetReport.cs" t="Include" />
+        </e>
+        <e p="Models" t="Include">
+          <e p="Account.cs" t="Include" />
+          <e p="Category.cs" t="Include" />
+          <e p="Expense.cs" t="Include" />
+          <e p="ExpenseDetail.cs" t="Include" />
+          <e p="Income.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="Expenses.Domain.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Repositories" t="Include">
+          <e p="IRepository.cs" t="Include" />
+          <e p="IUnitOfWork.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Expenses.Infrastructure" t="IncludeRecursive">
+        <e p="Application" t="Include">
+          <e p="Commands" t="Include" />
+          <e p="Enums" t="Include">
+            <e p="BudgetRecordType.cs" t="Include" />
+            <e p="BudgetReportEnum.cs" t="Include" />
+          </e>
+          <e p="Models" t="Include">
+            <e p="FacadeModel.cs" t="Include" />
+          </e>
+          <e p="Queries" t="Include" />
+        </e>
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="Dto" t="Include">
+          <e p="BudgetDay.cs" t="Include" />
+          <e p="BudgetReportDto.cs" t="Include" />
+          <e p="ReportDayDto.cs" t="Include" />
+        </e>
+        <e p="Expenses.Infrastructure.csproj" t="IncludeRecursive" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp3.0" t="Include">
+              <e p="Expenses.Infrastructure.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Repositories" t="Include">
+          <e p="BaseRepository.cs" t="Include" />
+          <e p="UnitOfWork.cs" t="Include" />
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_BudgetMS.117915436.00" t="ExcludeRecursive" />
+    <e p="$APPLICATION_CONFIG_DIR$/consoles/ide" t="IncludeRecursive" />
+  </component>
+</project>

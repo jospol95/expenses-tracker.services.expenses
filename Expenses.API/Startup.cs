@@ -9,6 +9,7 @@ using Expenses.Infrastructure.Repositories;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -40,6 +41,15 @@ namespace Expenses.API
                     .AllowAnyMethod()
                     .AllowAnyHeader();
             }));
+            
+            services.AddHttpsRedirection(options =>
+            {
+                options.RedirectStatusCode = StatusCodes.Status307TemporaryRedirect;
+                if (Environment.GetEnvironmentVariable("PORT") != null)
+                {
+                    options.HttpsPort = Int32.Parse(Environment.GetEnvironmentVariable("PORT"));
+                }
+            });
             
             services.AddDbContext<ExpensesDbContext>(option =>
             {
