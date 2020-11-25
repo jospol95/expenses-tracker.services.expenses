@@ -96,10 +96,17 @@ namespace Expenses.API
                 app.UseSwagger();
                 app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "BudgetAPI"); });
                 app.UseDeveloperExceptionPage();
+                app.UseHttpsRedirection();
+
+            }
+            else
+            {
+                app.UseReverseProxyHttpsEnforcer();
+                app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "BudgetAPI"); });
             }
 
-            // app.UseHttpsRedirection();
 
+            
             app.UseRouting();
             
 
