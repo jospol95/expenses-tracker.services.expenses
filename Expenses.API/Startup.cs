@@ -37,7 +37,7 @@ namespace Expenses.API
 
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
-                builder.WithOrigins("http://localhost:4200")
+                builder.WithOrigins("http://192.168.1.175:3000")
                     .AllowAnyMethod()
                     .AllowAnyHeader();
             }));
