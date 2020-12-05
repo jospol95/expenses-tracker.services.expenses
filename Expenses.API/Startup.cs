@@ -34,17 +34,17 @@ namespace Expenses.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-
+            
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
-                builder.WithOrigins("http://192.168.1.175:3000")
+                builder.WithOrigins(Environment.GetEnvironmentVariable("SPA_APP_URL"))
                     .AllowAnyMethod()
                     .AllowAnyHeader();
             }));
             
             services.AddDbContext<ExpensesDbContext>(option =>
             {
-                option.UseSqlServer(Configuration.GetConnectionString("budget_dev"),
+                option.UseSqlServer(Configuration.GetConnectionString("budget_db"),
                     sqlServerOptionsAction: sqlOptions =>
                     { 
                         //Configuring Connection Resiliency:
@@ -93,7 +93,6 @@ namespace Expenses.API
 
             if (env.IsDevelopment())
             {
-                app.UseSwagger();
                 app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "BudgetAPI"); });
                 app.UseDeveloperExceptionPage();
                 app.UseHttpsRedirection();
@@ -102,7 +101,6 @@ namespace Expenses.API
             else
             {
                 app.UseReverseProxyHttpsEnforcer();
-                app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "BudgetAPI"); });
             }
 
 

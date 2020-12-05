@@ -23,7 +23,8 @@
       "launchUrl": "weatherforecast",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SPA_APP_URL": "http://localhost:4200"
       }
     },
     "Expenses.API.Staging": {
@@ -32,7 +33,8 @@
       "launchUrl": "weatherforecast",
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
       "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Staging"
+        "ASPNETCORE_ENVIRONMENT": "Staging",
+        "SPA_APP_URL": "http://192.168.1.175:3000"
       }
     }
   }
