@@ -93,6 +93,7 @@ namespace Expenses.API
 
             if (env.IsDevelopment())
             {
+                app.UseSwagger();
                 app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "BudgetAPI"); });
                 app.UseDeveloperExceptionPage();
                 app.UseHttpsRedirection();
