@@ -1,23 +1,21 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Expenses.Contracts.HealthChecks;
 using Expenses.Domain;
-using Expenses.Domain.Models;
 using Expenses.Domain.Repositories;
+using Expenses.Infrastructure;
 using Expenses.Infrastructure.Repositories;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json;
 
 namespace Expenses.API
 {
@@ -34,6 +32,8 @@ namespace Expenses.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddCustomHealthChecks(Configuration);
             
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
@@ -104,7 +104,26 @@ namespace Expenses.API
                 app.UseReverseProxyHttpsEnforcer();
             }
 
-
+            //todo: stract with own extension method
+            app.UseHealthChecks("/health", new HealthCheckOptions()
+            {
+                ResponseWriter = async (context, report) =>
+                {
+                    context.Response.ContentType = "application/json";
+                    var response = new HealthCheckResponse
+                    {
+                        Status = report.Status.ToString(),
+                        HealthChecks = report.Entries.Select(x => new HealthCheck()
+                        {
+                            Component = x.Key,
+                            Status = x.Value.Status.ToString(),
+                            Description = x.Value.ToString()
+                        }),
+                        Duration = report.TotalDuration
+                    };
+                    await context.Response.WriteAsync(JsonConvert.SerializeObject(response));
+                }
+            });
             
             app.UseRouting();
             
