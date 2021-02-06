@@ -101,6 +101,7 @@ namespace Expenses.API
             }
             else
             {
+                app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "BudgetAPI"); });
                 app.UseReverseProxyHttpsEnforcer();
             }
 
