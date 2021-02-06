@@ -713,19 +713,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/josep/.nuget/packages/": {}
+    "/Users/josepolanco/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj",
+      "projectUniqueName": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj",
       "projectName": "Expenses.Domain",
-      "projectPath": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj",
-      "packagesPath": "/Users/josep/.nuget/packages/",
-      "outputPath": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Domain/obj/",
+      "projectPath": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj",
+      "packagesPath": "/Users/josepolanco/.nuget/packages/",
+      "outputPath": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/josep/.config/NuGet/NuGet.Config"
+        "/Users/josepolanco/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"
@@ -735,6 +735,7 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "targetAlias": "netcoreapp3.0",
           "projectReferences": {}
         }
       },
@@ -746,6 +747,7 @@
     },
     "frameworks": {
       "netcoreapp3.0": {
+        "targetAlias": "netcoreapp3.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": {
             "target": "Package",
@@ -774,6 +776,10 @@
           {
             "name": "Microsoft.AspNetCore.App.Ref",
             "version": "[3.0.1, 3.0.1]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.0.0, 3.0.0]"
           }
         ],
         "frameworkReferences": {
@@ -781,7 +787,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.API/Expenses.API.csproj": {}
+    "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.API/Expenses.API.csproj": {}
   },
   "projects": {
-    "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.API/Expenses.API.csproj": {
+    "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.API/Expenses.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.API/Expenses.API.csproj",
+        "projectUniqueName": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.API/Expenses.API.csproj",
         "projectName": "Expenses.API",
-        "projectPath": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.API/Expenses.API.csproj",
-        "packagesPath": "/Users/josep/.nuget/packages/",
-        "outputPath": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.API/obj/",
+        "projectPath": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.API/Expenses.API.csproj",
+        "packagesPath": "/Users/josepolanco/.nuget/packages/",
+        "outputPath": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.API/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/josep/.config/NuGet/NuGet.Config"
+          "/Users/josepolanco/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -24,12 +24,16 @@
         },
         "frameworks": {
           "netcoreapp3.0": {
+            "targetAlias": "netcoreapp3.0",
             "projectReferences": {
-              "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj": {
-                "projectPath": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj"
+              "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Contracts/Expenses.Contracts.csproj": {
+                "projectPath": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Contracts/Expenses.Contracts.csproj"
               },
-              "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Infrastructure/Expenses.Infrastructure.csproj": {
-                "projectPath": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Infrastructure/Expenses.Infrastructure.csproj"
+              "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj": {
+                "projectPath": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj"
+              },
+              "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Infrastructure/Expenses.Infrastructure.csproj": {
+                "projectPath": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Infrastructure/Expenses.Infrastructure.csproj"
               }
             }
           }
@@ -42,6 +46,7 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "targetAlias": "netcoreapp3.0",
           "dependencies": {
             "MediatR": {
               "target": "Package",
@@ -59,6 +64,10 @@
               "target": "Package",
               "version": "[3.1.9, )"
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[10.0.1, )"
+            },
             "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",
               "version": "[5.4.1, )"
@@ -70,6 +79,10 @@
             "Swashbuckle.AspNetCore.SwaggerUI": {
               "target": "Package",
               "version": "[5.4.1, )"
+            },
+            "System.Text.Json": {
+              "target": "Package",
+              "version": "[5.0.1, )"
             }
           },
           "imports": [
@@ -86,6 +99,10 @@
             {
               "name": "Microsoft.AspNetCore.App.Ref",
               "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
             }
           ],
           "frameworkReferences": {
@@ -96,21 +113,73 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.102/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj": {
+    "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Contracts/Expenses.Contracts.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj",
-        "projectName": "Expenses.Domain",
-        "projectPath": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj",
-        "packagesPath": "/Users/josep/.nuget/packages/",
-        "outputPath": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Domain/obj/",
+        "projectUniqueName": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Contracts/Expenses.Contracts.csproj",
+        "projectName": "Expenses.Contracts",
+        "projectPath": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Contracts/Expenses.Contracts.csproj",
+        "packagesPath": "/Users/josepolanco/.nuget/packages/",
+        "outputPath": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Contracts/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/josep/.config/NuGet/NuGet.Config"
+          "/Users/josepolanco/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "targetAlias": "netstandard2.1",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "targetAlias": "netstandard2.1",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj",
+        "projectName": "Expenses.Domain",
+        "projectPath": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj",
+        "packagesPath": "/Users/josepolanco/.nuget/packages/",
+        "outputPath": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/josepolanco/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -120,6 +189,7 @@
         },
         "frameworks": {
           "netcoreapp3.0": {
+            "targetAlias": "netcoreapp3.0",
             "projectReferences": {}
           }
         },
@@ -131,6 +201,7 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "targetAlias": "netcoreapp3.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -159,6 +230,10 @@
             {
               "name": "Microsoft.AspNetCore.App.Ref",
               "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
             }
           ],
           "frameworkReferences": {
@@ -166,21 +241,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.102/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Infrastructure/Expenses.Infrastructure.csproj": {
+    "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Infrastructure/Expenses.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Infrastructure/Expenses.Infrastructure.csproj",
+        "projectUniqueName": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Infrastructure/Expenses.Infrastructure.csproj",
         "projectName": "Expenses.Infrastructure",
-        "projectPath": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Infrastructure/Expenses.Infrastructure.csproj",
-        "packagesPath": "/Users/josep/.nuget/packages/",
-        "outputPath": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Infrastructure/obj/",
+        "projectPath": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Infrastructure/Expenses.Infrastructure.csproj",
+        "packagesPath": "/Users/josepolanco/.nuget/packages/",
+        "outputPath": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/josep/.config/NuGet/NuGet.Config"
+          "/Users/josepolanco/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.0"
@@ -190,9 +265,10 @@
         },
         "frameworks": {
           "netcoreapp3.0": {
+            "targetAlias": "netcoreapp3.0",
             "projectReferences": {
-              "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj": {
-                "projectPath": "/Users/josep/Documents/Projects/expense-tracker/services/budgetme/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj"
+              "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj": {
+                "projectPath": "/Users/josepolanco/Desktop/GithubProjects/BudgetMe/expenses-tracker.services.expenses/Expenses.Domain/Expenses.Domain.csproj"
               }
             }
           }
@@ -205,12 +281,25 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "targetAlias": "netcoreapp3.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.9, )"
             },
             "Microsoft.EntityFrameworkCore.Analyzers": {
+              "target": "Package",
+              "version": "[3.1.9, )"
+            },
+            "Microsoft.Extensions.Diagnostics.HealthChecks": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.9, )"
             }
@@ -229,6 +318,10 @@
             {
               "name": "Microsoft.AspNetCore.App.Ref",
               "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
             }
           ],
           "frameworkReferences": {
@@ -236,7 +329,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.102/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
         }
       }
     }
