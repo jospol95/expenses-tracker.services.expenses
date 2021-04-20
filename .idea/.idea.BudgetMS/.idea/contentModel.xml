@@ -38,6 +38,7 @@
             <e p="GetAccountsQuery.cs" t="Include" />
             <e p="GetBudgetCalendarByDateQuery.cs" t="Include" />
             <e p="GetBudgetReportQuery.cs" t="Include" />
+            <e p="GetBudgetSummaryQuery.cs" t="Include" />
             <e p="GetCategoriesQuery.cs" t="Include" />
             <e p="GetExpenseByIdQuery.cs" t="Include" />
             <e p="GetIncomeByIdQuery.cs" t="Include" />
@@ -62,6 +63,7 @@
           <e p="BudgetController.cs" t="Include" />
           <e p="CategoriesController.cs" t="Include" />
           <e p="ExpensesController.cs" t="Include" />
+          <e p="HomeController.cs" t="Include" />
           <e p="IncomeController.cs" t="Include" />
           <e p="ReportsController.cs" t="Include" />
         </e>
